@@ -53,11 +53,11 @@ export interface IStorage {
   // Crisis support
   createCrisisAlert(userId: string, moodLevel: number, notes?: string): Promise<CrisisAlert>;
   
-  sessionStore: session.SessionStore;
+  sessionStore: session.Store;
 }
 
 export class DatabaseStorage implements IStorage {
-  sessionStore: session.SessionStore;
+  sessionStore: session.Store;
 
   constructor() {
     this.sessionStore = new PostgresSessionStore({ 

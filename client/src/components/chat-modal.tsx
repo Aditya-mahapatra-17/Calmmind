@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -67,9 +67,9 @@ export function ChatModal({ isOpen, onClose }: ChatModalProps) {
             </div>
             <div>
               <DialogTitle className="font-medium text-foreground">Anonymous Counselor</DialogTitle>
-              <p className="text-xs text-muted-foreground">
+              <DialogDescription className="text-xs text-muted-foreground">
                 {isConnected ? "Online now" : "Connecting..."}
-              </p>
+              </DialogDescription>
             </div>
           </div>
         </DialogHeader>

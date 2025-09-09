@@ -28,7 +28,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Check for crisis
       if (validatedData.moodLevel <= 2) {
-        await storage.createCrisisAlert(req.user!.id, validatedData.moodLevel, validatedData.notes);
+        await storage.createCrisisAlert(req.user!.id, validatedData.moodLevel, validatedData.notes || undefined);
       }
 
       // Check for achievements
